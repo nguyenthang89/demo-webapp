@@ -25,7 +25,19 @@
      <button><a href="https://nguyenthang89.github.io/demo-webapp/add-new-customer.html">Thêm mới</a></button>
       <div class="table-responsive">
        <h5>Quản lí danh sách khách hàng (màn hình dành cho admin)        </h5>       
-
+       <form>
+        <label for="search">Tìm kiếm:</label>
+        <input type="text" id="search" name="search">
+      
+        <label for="start-date">ngày bắt đầu:</label>
+        <input type="date" id="start-date" name="start-date">
+      
+        <label for="end-date">Ngày kết thúc:</label>
+        <input type="date" id="end-date" name="end-date">
+      
+        <button type="submit">Search</button>
+      </form>
+      
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
