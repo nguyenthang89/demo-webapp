@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User History Table with Bootstrap</title>
+  <!-- Add the Bootstrap CSS stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Add custom CSS -->
+  <style>
+    .add-new-button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>User History Table</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2022-01-01</td>
+          <td>Login</td>
+          <td>Successful login from IP address 192.168.1.1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2022-01-02</td>
+          <td>Logout</td>
+          <td>User manually logged out</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2022-01-02</td>
+          <td>Password reset</td>
+          <td>Password reset requested by user</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-primary add-new-button">Add New</button>
+  </div>
+
+  <!-- Add the Bootstrap JavaScript library and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+  <script>
+    $(function() {
+      $('.add-new-button').click(function() {
+        var newRow = $('<tr>');
+        var cols = '';
+        
+        cols += '<td><input type="text" class="form-control"></td>';
+        cols += '<td><input type="date" class="form-control"></td>';
+        cols += '<td><input type="text" class="form-control"></td>';
+        cols += '<td><input type="text" class="form-control"></td>';
+        
+        cols += '<td><button class="btn btn-danger delete-row">Delete</button></td>';
+        
+        newRow.append(cols);
+        $('table').append(newRow);
+      });
+      
+      $(document).on('click', '.delete-row', function() {
+        $(this).parent().parent().remove();
+      });
+    });
+  </script>
+</body>
+</html>

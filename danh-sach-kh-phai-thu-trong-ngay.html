@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Button Table with Icon and Color Change</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<!-- Favicon -->
+	<link rel="icon" href="favicon.ico">
+</head>
+<body>	
+  <div class="container my-4">
+    <span> MÀN HÌNH DÀNH CHO NHÂN VIÊN</span>
+    <BR>
+    <BR>
+    <span>DANH SÁCH KHÁCH HÀNG PHẢI THU TIỀN HÔM NAY</span>
+    <br>
+    <br>
+		<div class="row">      
+			<div class="col-md-6">        
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Tìm kiếm theo tên hoặc sđt...">
+					<div class="input-group-append">
+						<button class="btn btn-primary" type="button">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  <p> Thu thiếu hiện icon màu đỏ (cần lưu vào database nên em chưa demo)</p>
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+          <th>Họ tên khách hàng</th>
+					<th>Số điện thoại</th>
+          <th>Số tiền nợ</th>
+					<th>Số tiền phải thu</th>
+					<th>Trạng thái</th>
+					<th>Ghi chú</th>
+          <th>Ô này xem chi tiết khách hàng và cho cập nhật 1 hoặc nhiều ngày</th>
+					<th>Ngày</th>
+          
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+          <td>Thang Nguyen</td>
+					<td>32131</td>
+          <td>100.000</td>
+					<td>50.000</td>
+					<td><button class="btn btn-primary icon-btn"><i class="fas fa-thumbs-down red"></i></button></td>
+					<td contentEditable="true">dsadsads</td>
+          <td><button class="btn btn-sm btn-primary edit-btn">Xem <i class="fas fa-edit"></i></button></td>
+					<td><p id="date"></p></td>
+				</tr>
+				<tr>
+          <td>Trần Trường Thành</td>
+					<td>32131</td>
+          <td>200.000</td>
+					<td>50.000</td>
+					<td><button class="btn btn-primary icon-btn"><i class="fas fa-thumbs-down red"></i></button></td>
+					<td contentEditable="true">dsadsads</td>
+          <td><button class="btn btn-sm btn-primary edit-btn">Xem<i class="fas fa-edit"></i></button></td>
+					<td><p id="date2"></p></td>
+				</tr>
+				<tr>
+          <td>Row 2, Column 2</td>
+					<td>Row 2, Column 3</td>
+          <td>Row 2, Column 2</td>
+					<td>Row 2, Column 3</td>
+					<td><button class="btn btn-primary icon-btn"><i class="fas fa-thumbs-down red"></i></button></td>
+					<td contentEditable="true">dsadsads</td>
+          <td><button class="btn btn-sm btn-primary edit-btn">Xem<i class="fas fa-edit"></i></button></td>
+					<td><p id="date1"></p></td>
+				</tr>
+			</tbody>
+		</table>
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+	</div>
+
+	<!-- jQuery and Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    // Get the current date
+    let currentDate = new Date();
+    
+    // Format the date as desired
+    let dateString = currentDate.toLocaleDateString();
+
+    // Output the date to the HTML page
+    document.getElementById("date").innerHTML = dateString;
+  </script>
+  <script>
+    // Get the current date
+    let currentDate1 = new Date();
+    
+    // Format the date as desired
+    let dateString1 = currentDate.toLocaleDateString();
+
+    // Output the date to the HTML page
+    document.getElementById("date1").innerHTML = dateString;
+  </script>
+  <script>
+    // Get the current date
+    let currentDate2 = new Date();
+    
+    // Format the date as desired
+    let dateString2 = currentDate.toLocaleDateString();
+
+    // Output the date to the HTML page
+    document.getElementById("date2").innerHTML = dateString;
+  </script>
+	<script>
+		// Click handler for the button
+		$('.icon-btn').click(function() {
+			// Update the icon to "fa-thumbs-down" and change color to red
+			$(this).find('i').removeClass('fa-thumbs-down red').addClass('fa-thumbs-up blue');
+		});
+	</script>
+
+	<style>
+		/* Define custom colors */
+		.blue {
+			color: blue;
+		}
+		.red {
+			color: red;
+		}
+	</style>
+</body>
+</html>
